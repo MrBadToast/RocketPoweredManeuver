@@ -10,7 +10,7 @@ public class SlowShake : MonoBehaviour
 
     Vector2 LegacyPosition;
 
-    private void Start()
+    private void OnEnable()
     {
         LegacyPosition = transform.localPosition;
     }
@@ -20,6 +20,6 @@ public class SlowShake : MonoBehaviour
 
         transform.localPosition = LegacyPosition;
         LegacyPosition = transform.localPosition;
-        transform.localPosition = new Vector2(Mathf.PerlinNoise(Time.time*SpeedScale, 0f) * ShakeRange.x * Scale, Mathf.PerlinNoise(0f, Time.time*SpeedScale) * ShakeRange.y * Scale);
+        transform.localPosition += new Vector3(Mathf.PerlinNoise(Time.time*SpeedScale, 0f) * ShakeRange.x * Scale, Mathf.PerlinNoise(0f, Time.time*SpeedScale) * ShakeRange.y * Scale);
     }
 }

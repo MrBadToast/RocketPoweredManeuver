@@ -221,9 +221,9 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -4000171038999821291, guid: cb1d70367c9e67f44adcea65518d9b5a, type: 2}
     value: {fileID: 1169633675}
-  - key: {fileID: 1076862574163334524, guid: cb1d70367c9e67f44adcea65518d9b5a, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 0}
-  - key: {fileID: 3243219372904297885, guid: cb1d70367c9e67f44adcea65518d9b5a, type: 2}
+  - key: {fileID: 0}
     value: {fileID: 0}
   - key: {fileID: -3168120444315366747, guid: a01c19b1279777f4eb29df10c5b37038, type: 2}
     value: {fileID: 1169633675}
@@ -952,10 +952,6 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: -4000171038999821291, guid: cb1d70367c9e67f44adcea65518d9b5a, type: 2}
     value: {fileID: 1169633675}
-  - key: {fileID: 1076862574163334524, guid: cb1d70367c9e67f44adcea65518d9b5a, type: 2}
-    value: {fileID: 0}
-  - key: {fileID: 3243219372904297885, guid: cb1d70367c9e67f44adcea65518d9b5a, type: 2}
-    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!4 &2118432819
