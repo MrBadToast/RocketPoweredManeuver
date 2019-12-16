@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class CharacterController : MonoBehaviour
 {
@@ -17,7 +18,7 @@ public class CharacterController : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
         rbody.AddForce(Vector2.right * ControlSlider.value * HorForceFactor);
         if(Physics2D.Raycast(RCO_Foot.position,Vector2.down,0.1f))

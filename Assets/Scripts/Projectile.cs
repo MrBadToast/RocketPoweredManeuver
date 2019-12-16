@@ -15,7 +15,7 @@ public class Projectile : MonoBehaviour
         rbody = GetComponent<Rigidbody2D>();
     }
 
-    public void Update()
+    public void FixedUpdate()
     {
         rbody.velocity = transform.up * PropellantVelocity;
     }

@@ -50,6 +50,14 @@ public class GroundManager : MonoBehaviour
         }
     }
 
+    public void ResetGround()
+    {
+        for(int i = 1; i < groundList.Count; i++)
+            Destroy(groundList[i]);
+        groundList.Clear();
+        groundList.Add(StartGround);
+    }
+
     GameObject GenerateGround(GameObject groundObject)
     {
         Transform t_lastGround = groundList[groundList.Count - 1].transform;
@@ -75,6 +83,5 @@ public class GroundManager : MonoBehaviour
 
         return newGround;
     }
-
 }
 
