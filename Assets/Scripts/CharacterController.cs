@@ -9,25 +9,38 @@ public class CharacterController : MonoBehaviour
     public GameObject ProjectileObject;
     public Transform RCO_Foot;
     public float HorForceFactor = 1f;
-    public float Friction = 1.0f;
+    public float Friction = 0.5f;
 
     Rigidbody2D rbody;
+    Animator animator;
 
-    private void Start()
+    private void Awake()
     {
         rbody = GetComponent<Rigidbody2D>();
+        animator = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         rbody.AddForce(Vector2.right * ControlSlider.value * HorForceFactor);
+
         if(Physics2D.Raycast(RCO_Foot.position,Vector2.down,0.1f))
         {
-            rbody.AddForce(-Friction * rbody.velocity.normalized);
+            animator.SetBool("Grounded", true);
+            rbody.AddForce( -Friction * rbody.velocity.normalized);
         }
+        else
+            animator.SetBool("Grounded", false);
 
+        animator.SetFloat("HorizontalInput", Mathf.Abs(ControlSlider.value));
+        animator.SetFloat("VerticalSpeed", rbody.velocity.y);
+
+    }
+
+    private void Update()
+    {
 #if UNITY_EDITOR
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             FireProjectileToDown();
         }

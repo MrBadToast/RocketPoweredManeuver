@@ -19,12 +19,12 @@ public class AvgSpeedMeter : MonoBehaviour
 
     private void Update()
     {
-        if(Chr_rbody.velocity.x > 0.1f)
+        if(Mathf.Abs(Chr_rbody.velocity.x) > 0.1f)
         {
             TimeElapsed += Time.deltaTime;
         }
 
-        AvgSpeed = (Chr_rbody.transform.position.x * 2 / TimeElapsed);
+        AvgSpeed = (Mathf.Abs(Chr_rbody.transform.position.x) * 2 / TimeElapsed);
 
         textMesh.text = ((int)AvgSpeed).ToString();
     }

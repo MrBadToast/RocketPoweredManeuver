@@ -17,7 +17,7 @@ public class SpeedMeter : MonoBehaviour
 
     private void Update()
     {
-        float CurrentSpeed = Chr_rbody.velocity.x * 2;
+        float CurrentSpeed = Mathf.Abs(Chr_rbody.velocity.x * 2);
 
         textMesh.text = ((int)CurrentSpeed).ToString();
 
